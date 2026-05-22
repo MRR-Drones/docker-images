@@ -27,10 +27,6 @@ USER mavsdk
 # Expose default MAVSDK server port (gRPC)
 EXPOSE 50051
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:50051 || exit 1
-
 # Start MAVSDK server
 # Server listens on 0.0.0.0:50051 by default
 
